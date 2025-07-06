@@ -1,17 +1,9 @@
-//
-//  AppRouter.swift
-//  NestNotes
-//
-//  Created by Адам Табиев on 03.07.2025.
-//
-
 import Foundation
 
 /// Управляет маршрутами экранов приложения.
 /// Отвечает за навигацию между основными экранами и вкладками.
 
 final class AppRouter: ObservableObject {
-    
     /// Текущий основной экран приложения
     @Published var currentMainScreen: AppMainScreen = .splash
     
@@ -23,7 +15,6 @@ final class AppRouter: ObservableObject {
     
     /// Стек экранов вкладки "Settings"
     @Published var settingsRoute: [SettingsScreen] = []
-    
 }
 
 // MARK: - Основные экраны приложения
@@ -40,6 +31,9 @@ enum AppMainScreen {
 /// Экраны вкладки "Notes".
 enum NotesScreen {
     case main
+    case create
+    case detailed
+    case edit
 }
 
 // MARK: - Экраны вкладки "Tips"

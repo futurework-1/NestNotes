@@ -1,10 +1,3 @@
-//
-//  TabbarBottomView.swift
-//  NestNotes
-//
-//  Created by Адам Табиев on 03.07.2025.
-//
-
 import SwiftUI
 
 /// Модель элемента таббара
@@ -56,7 +49,7 @@ struct TabbarBottomView: View {
                         switch index {
                         case 1: selectedTab = .tips
                         case 2: selectedTab = .settings
-                        default : selectedTab = .note
+                        default: selectedTab = .note
                         }
                     }
                 }
@@ -71,7 +64,8 @@ struct TabbarBottomView: View {
     }
 }
 
-
 #Preview {
     TabbarMainView()
+        .environmentObject(AppRouter())
+        .environmentObject(TabbarService())
 }

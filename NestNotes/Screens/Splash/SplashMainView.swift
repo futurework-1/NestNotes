@@ -1,18 +1,9 @@
-//
-//  SplashMainView.swift
-//  NestNotes
-//
-//  Created by Адам Табиев on 03.07.2025.
-//
-
 import SwiftUI
 
 struct SplashMainView: View {
+    @EnvironmentObject private var appRouter: AppRouter
     
     @State private var scale: CGFloat = 0.2
-    
-    /// Роутер для навигации
-    @EnvironmentObject private var appRouter: AppRouter
     
     var body: some View {
         ZStack {
@@ -32,7 +23,6 @@ struct SplashMainView: View {
                     .foregroundStyle(.white)
                     .shadow(color: .violet2, radius: 0, x: 0, y: 6)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .scaleEffect(scale)
             .animation(.bouncy(duration: 1.0), value: scale)
             .onAppear {
@@ -48,5 +38,5 @@ struct SplashMainView: View {
 
 #Preview {
     SplashMainView()
+        .environmentObject(AppRouter())
 }
-

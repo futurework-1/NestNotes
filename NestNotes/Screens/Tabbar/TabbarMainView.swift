@@ -1,17 +1,10 @@
-//
-//  TabbarMainView.swift
-//  NestNotes
-//
-//  Created by Адам Табиев on 03.07.2025.
-//
-
 import SwiftUI
 
 struct TabbarMainView: View {
-    
+    /// Настройка таббара
+    @EnvironmentObject private var tabbarService: TabbarService
     /// Текущая выбранная вкладка
     @State private var selectedTab: AppTabScreen = .note
-    
     /// Высота таббара
     private let tabbarHeight: CGFloat = 68
     
@@ -28,14 +21,15 @@ struct TabbarMainView: View {
                 }
             }
             
-            
             // Таббар поверх контента
-            VStack(alignment: .center, spacing: 0) {
-                Spacer()
-                TabbarBottomView(selectedTab: $selectedTab, tabbarHeight: tabbarHeight)
+            if tabbarService.isTabbarVisible {
+                VStack(alignment: .center, spacing: 0) {
+                    Spacer()
+                    TabbarBottomView(selectedTab: $selectedTab, tabbarHeight: tabbarHeight)
+                }
+                .padding(.bottom, 60)
+                .padding(.horizontal, 56)
             }
-            .padding(.bottom, 60)
-            .padding(.horizontal, 56)
         }
         .ignoresSafeArea(.all, edges: .bottom)
     }
@@ -43,4 +37,6 @@ struct TabbarMainView: View {
 
 #Preview {
     TabbarMainView()
+        .environmentObject(AppRouter())
+        .environmentObject(TabbarService())
 }
