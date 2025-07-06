@@ -1,16 +1,10 @@
-//
-//  ContentView.swift
-//  NestNotes
-//
-//  Created by Адам Табиев on 03.07.2025.
-//
-
 import SwiftUI
 
 struct RootView: View {
-    
     /// Роутер для навигации
     @EnvironmentObject private var appRouter: AppRouter
+    /// Настройка таббара
+    @EnvironmentObject private var tabbarService: TabbarService
     
     var body: some View {
         Group {
@@ -27,5 +21,6 @@ struct RootView: View {
 #Preview {
     RootView()
         .environmentObject(AppRouter())
+        .environmentObject(TabbarService())
 }
 

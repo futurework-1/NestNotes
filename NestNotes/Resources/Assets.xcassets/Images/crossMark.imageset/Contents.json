@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "emojione_cross-mark-button.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true,
+    "template-rendering-intent" : "original"
+  }
+}

@@ -1,10 +1,3 @@
-//
-//  Fonts+Ext.swift
-//  NestNotes
-//
-//  Created by Адам Табиев on 03.07.2025.
-//
-
 import SwiftUI
 
 /// Шрифты Bungee

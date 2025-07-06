@@ -1,22 +1,15 @@
-//
-//  NestNotesApp.swift
-//  NestNotes
-//
-//  Created by Адам Табиев on 03.07.2025.
-//
-
 import SwiftUI
 
 @main
 struct NestNotes_V2App: App {
-    
-    /// Роутер для навигации
-    @State private var appRouter = AppRouter()
+    @StateObject private var appRouter = AppRouter()
+    @StateObject private var tabbarService = TabbarService()
     
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(appRouter)
+                .environmentObject(tabbarService)
                 .dynamicTypeSize(.large)
                 .background(.black)
         }
