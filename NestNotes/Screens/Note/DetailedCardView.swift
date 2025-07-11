@@ -157,6 +157,7 @@ struct DetailedCardView: View {
                         onClear: {
                             if let note = note {
                                 NoteUserDefaultsService.shared.delete(note: note)
+                                tabbarService.isTabbarVisible = true
                                 dismiss()
                             }
                             showDeleteAlert = false

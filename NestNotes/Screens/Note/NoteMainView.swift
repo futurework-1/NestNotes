@@ -67,6 +67,7 @@ struct NoteMainView: View {
                     }
                     Spacer(minLength: 0)
                     Button {
+                        tabbarService.isTabbarVisible = false
                         appRouter.notesRoute.append(.create)
                     } label: {
                         Text("ADD A NOTE")

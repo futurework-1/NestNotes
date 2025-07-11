@@ -35,8 +35,8 @@ struct NoteEditView: View {
             VStack(alignment: .center, spacing: 0) {
                 HStack(alignment: .center, spacing: 0) {
                     BackButton {
-                        dismiss()
                         tabbarService.isTabbarVisible = true
+                        dismiss()
                     }
                     
                     Text("EDIT NOTE")
@@ -108,6 +108,7 @@ struct NoteEditView: View {
                         completedAt: note.completedAt
                     )
                     NoteUserDefaultsService.shared.update(note: updatedNote)
+                    tabbarService.isTabbarVisible = true
                     dismiss()
                 }
                 .padding(.bottom, 80)

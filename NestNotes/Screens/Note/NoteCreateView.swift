@@ -35,8 +35,8 @@ struct NoteCreateView: View {
             VStack(alignment: .center, spacing: 0) {
                 HStack(alignment: .center, spacing: 0) {
                     BackButton {
-                        dismiss()
                         tabbarService.isTabbarVisible = true
+                        dismiss()
                     }
                     
                     Text("ADD A NOTE")
@@ -108,6 +108,7 @@ struct NoteCreateView: View {
                         completedAt: nil
                     )
                     NoteUserDefaultsService.shared.save(note: note)
+                    tabbarService.isTabbarVisible = true
                     dismiss()
                 }
                 .padding(.bottom, 80)
