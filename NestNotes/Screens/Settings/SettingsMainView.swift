@@ -49,8 +49,8 @@ struct SettingsMainView: View {
     @State private var webViewURL: URL? = nil
     @State private var webViewType: WebViewType = .privacyPolicy
     
-    private let privacyPolicyURL = URL(string: "https://apple.com")
-    private let aboutDeveloperURL = URL(string: "https://google.com")
+    private let privacyPolicyURL = URL(string: "https://sites.google.com/view/nestnotes/privacy-policy")
+    private let aboutDeveloperURL = URL(string: "https://sites.google.com/view/nestnotes/app-support")
     
     var body: some View {
         @ObservedObject var appRouter = appRouter
